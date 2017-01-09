@@ -1,5 +1,6 @@
 # glacier
 - 框架定位：轻量级框架，主要用于学习研究，用法类似laravel
+- 不推荐用于生产环境，本人用作小项目：比如微信公众号这样的小程序
 - 尽量采用的是PHP原生的方式，但是运用了laravel的容器、中间件、eloqunent组件
 - 视图采用最原始的方式，与yii1.1用法差不多
 - 请求与响应等也没有进行类的封装(laravel用的symfony)，这样便于学习理解http协议。
@@ -86,7 +87,7 @@ return view('demo',['test'=>$demo->message]);
 ```
 
 ##视图
-视图文件存放在`Views`目录下
+视图文件存放在`Views`目录下，请注意防范`XSS`攻击
 ```
 YII1.1类似语法
 控制器return view("admin",array("key"=>"value"));
