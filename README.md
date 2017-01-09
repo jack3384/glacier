@@ -6,6 +6,9 @@
 
 
 # 基本用法
+
+请先使用：`composer install`安装依赖
+
 **基本用法：**
 访问： `/index.php?route=控制器名/方法名&argu=参数1/参数2...`
 
