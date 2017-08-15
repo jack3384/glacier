@@ -20,13 +20,13 @@
 
 也可以 `127.0.0.1/Admin/login?getname=myname` 通过$_GET['getname']获得传递的数据
 
-##配置文件
+## 配置文件
 `Configs/default.php` 为默认配置文件
 可配置已经是否显示debug信息和默认数据库
 默认数据库为自带的sqlite3类型，可以将`database`信息替换成mysql的，
 也可以多定义几个数据库连接信息后面model里会讲怎么用多数据库连接
 
-##控制器
+## 控制器
 ```
 未指定控制器与方法默认访问Index/index
 
@@ -79,14 +79,14 @@ return array(); //输出json
 //视图函数
 return view('demo',['test'=>$demo->message]);
 ```
-##Model
+## Model
 采用laravel的`eloquent`,通过全局函数`db()`可以获得其实例
 ```
     //eloquent的使用
        $demo= db()->table('demo')->first();
 ```
 
-##视图
+## 视图
 视图文件存放在`Views`目录下，请注意防范`XSS`攻击
 ```
 YII1.1类似语法
@@ -104,7 +104,7 @@ view()->layout('parent')->render('child');;
 
 ```
 
-##中间件
+## 中间件
 #### 中间件的开关
 ```
 Configs/middlewares.php 设置全局中间件
@@ -144,7 +144,7 @@ class Demo
 }
 ```
 
-##异常
+## 异常
 ```
 /*有任何异常抛出或者错误警告都会中断脚本执行，抛出异常界面通常状态码为500,
 如果Configs/default.php 中开启了debug将显示 异常信息与脚本执行的步骤等
