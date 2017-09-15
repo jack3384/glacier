@@ -5,7 +5,7 @@ namespace glacier\framework;
 class ExceptionHandler
 {
 
-    static public function handle(\Exception $e)
+    static public function handle( $e)
     {
         ob_clean();//清空前面的输出
         $code = $e->getCode()>=100?$e->getCode():500; //默认为500

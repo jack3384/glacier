@@ -106,7 +106,10 @@ class Kernel
             $type=explode(':',$val);
             if('on'==$type[0]){
                 array_push($on,$key);
-            }elseif('only'==$type[0]){
+            }elseif ('off'==$type[0]){
+                array_push($off,$key);
+            }
+            elseif('only'==$type[0]){
                 $actions=explode('|',$type[1]);
                 if(in_array($this->action,$actions)){
                     array_push($on,$key);

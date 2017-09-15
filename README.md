@@ -85,6 +85,8 @@ return view('demo',['test'=>$demo->message]);
     //eloquent的使用
        $demo= db()->table('demo')->first();
 ```
+官方文档详见： https://laravel.com/docs/5.1/database
+中文翻译文档： http://laravelacademy.org/post/124.html
 
 ## 视图
 视图文件存放在`Views`目录下，请注意防范`XSS`攻击
@@ -152,9 +154,11 @@ class Demo
 throw new \Exception ("错误提示信息",500); //500为状态码可以修改比如404
 ```
 
-#### 三个全局函数
-- `app()`获得容器实例
-- `db()`获得eloquent实例
+## 全局函数
+- `app()`获得容器实例 //运用的是laravel 5.1的IOC（`illuminate/container`）
+- `db()`获得`illuminate/database`实例
 - `view()` 获得Viewer实例
+- `config($fileName)`获得Config/$fileName.php 的内容，不传参数默认为default的
 
-
+## 实用小工具(curl,文件缓存等)
+https://github.com/jack3384/widgets
